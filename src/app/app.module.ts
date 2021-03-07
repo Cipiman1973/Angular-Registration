@@ -15,8 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
         BrowserModule,
         ReactiveFormsModule,
       RouterModule.forRoot([
-        { path: '', component: RegisterComponent },
-        { path: 'reactive-form', component: RegisterComponent }
+        { path: 'register', component: RegisterComponent }
       ]),
     ],
   providers: [],

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Validators, FormGroup, FormBuilder} from '@angular/forms';
 import {ServicesService} from '../services.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private customValidator: ServicesService
+    private customValidator: ServicesService,
+    private httpClient: HttpClient
   ) {
   }
 
@@ -40,7 +42,7 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       alert('Form Submitted! Values are in console');
       console.log(this.registerForm.value);
-      this.registerForm.get('https://webhook.site/b6a51c16-5beb-42a5-86d9-55a927d24f32');
+      this.httpClient.get('https://webhook.site/b6a51c16-5beb-42a5-86d9-55a927d24f32' + this.registerForm);
     }
   }
 
