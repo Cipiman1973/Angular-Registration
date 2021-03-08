@@ -2,50 +2,39 @@
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <div>
-    <label>Name or UserName</label>
+    <label>Name or UserName </label>
     <label>
       <input type="text" formControlName="name" placeholder="Type here">
     </label>
-    <span
-      *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required"
-      style="color: red">
-                                Name or UserName is required
-                            </span>
+    <span *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required"
+          style="color: red">Name or UserName is required</span>
   </div>
   <div>
-    <label>Password</label>
+    <label>Password </label>
     <label>
       <input type="password" formControlName="password" placeholder="Type here">
     </label>
-    <span
-      *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required"
-      style="color: red">
-                                Password is required
-                            </span>
-    <span
-      *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword"
-      style="color: red">
+    <span *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required"
+          style="color: red">Password is required</span>
+    <span *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword"
+          style="color: red">
                                 Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
-                                letter and 1 number
-                            </span>
+                                letter and 1 number </span>
   </div>
   <div>
-    <label>Confirm Password</label>
+    <label>Confirm Password </label>
     <label>
       <input type="password" formControlName="confirmPassword" placeholder="Type here">
     </label>
     <span
       *ngIf="(registerFormControl.confirmPassword.touched || submitted)&& registerFormControl.confirmPassword.errors?.required"
       style="color: red">
-                                Confirm Password is required
-                            </span>
+      Confirm Password is required</span>
     <span
-      *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">
-                                Passwords does not match
-                            </span>
+      *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">Passwords does not match</span>
   </div>
   <div>
-    <button type="submit" (click)="onSubmit()" >Register</button>
+    <button type="submit" (click)="onSubmit()">Register</button>
   </div>
 </form>
 
