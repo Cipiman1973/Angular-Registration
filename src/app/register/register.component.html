@@ -33,6 +33,21 @@
     <span
       *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">Passwords does not match</span>
   </div>
+
+  <div>
+    <label>Name or UserName </label>
+    <label>
+      <input type="text" formControlName="age" placeholder="Type here">
+    </label>
+    <span *ngIf="(registerFormControl.age.touched || submitted) && registerFormControl.age.errors?.required"
+          style="color: red">Age is required</span>
+    <span *ngIf="registerFormControl.age.touched && registerFormControl.age.errors?.ageRange"
+          style="color: red"> You are too old or too young</span>
+  </div>
+
+
+
+
   <div>
     <button type="submit" (click)="onSubmit()">Register</button>
   </div>
